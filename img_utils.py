@@ -47,7 +47,7 @@ def preprocess_img(img_path, tensor_size, normal_val,
             transform_list += [v2.Pad(padding, padding_mode='reflect')] #반사패딩 설정
         
         transform_list += [
-            v2.Resize((tensor_size, tensor_size)), #Tensor_size로 리사이징
+            v2.Resize(tensor_size), #Tensor_size로 리사이징, tensor_size는 튜플
             v2.ToImage(),  # 이미지를 Tensor 자료형으로 변환
             v2.ToDtype(torch.float32, scale=True), #텐서 자료형을 [0~1]로 정규화
             v2.Normalize(mean=normal_val['mean'], std=normal_val['std']) #데이터셋 표준화

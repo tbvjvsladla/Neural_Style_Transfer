@@ -100,7 +100,7 @@ class ImageTransformNet(nn.Module):
             BasicConv(3, 32, kernel_size=9, stride=1, relu=True),
             
             BasicConv(32, 64, kernel_size=3, stride=2, relu=True),
-            BasicConv(64, 128, kernel_size=3, stride=2, relu=True)
+            BasicConv(64, 128, kernel_size=3, stride=2, relu=True),
         )
 
         #Residual Layer
